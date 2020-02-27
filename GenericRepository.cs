@@ -1,10 +1,10 @@
 public class GenericRepository<TEntity> : IGenericRepository<TEntity>
             where TEntity : class, IEntity
     {
-        private AkosContext _dbContext;
+        private DbContext _dbContext;
         private DbSet<TEntity> _dbSet;
 
-        public GenericRepository(AkosContext dbContext)
+        public GenericRepository(DbContext dbContext)
         {
             _dbContext = dbContext;
             _dbSet = _dbContext.Set<TEntity>();
